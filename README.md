@@ -1,2 +1,29 @@
-# MATH-120-Final-Project
-This is the repository for the final project of MATH 120. It contains all the information required by the project guidelines.
+# MATH-120-Final-Project: Game Steam Stats for March 2025
+
+# Summary:
+This final project for MATH 120 explores statistics on Steam games for March 2025 using data sourced from Kaggle. The analysis focuses on identifying the types of games available on the platform and determining which titles attracted the most consumer attention. By examining patterns in popularity and genre trends, the project highlights what gamers are currently interested in and playing. These insights can help inform aspiring game developers about market preferences and emerging opportunities.
+
+Data Link:
+https://www.kaggle.com/datasets/artermiloff/steam-games-dataset?resource=download&select=games_march2025_full.csv
+
+# Instructions on how to run:
+---------------------------
+Local Repository-
+1) Clone repository
+    git clone https://github.com/Wasian98/MATH-120-Final-Project.git
+    cd MATH-120-Final-Project
+2) Install required packages if needed
+    pip install pandas matplotlib numpy jupyter
+3) Launch jupyter notebook
+    python -m notebook
+4) Click on the MATH_120_Final_Project_Notebook and then once it loads, open it in Colab
+
+Through Github-
+1) Go to the Github repository
+    https://github.com/Wasian98/MATH-120-Final-Project
+2) Click on the MATH_120_Final_Project_Notebook
+3) Open the notebook through Colab
+
+# Author
+Zacheary Vang
+MATH 120 - Fall/25
