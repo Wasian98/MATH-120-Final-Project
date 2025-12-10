@@ -1,7 +1,9 @@
 # Updated Project Proposal
 
 # Research Questions:
-1) What are the genres of the 
+1) Which game genres are the most heavily developed on Steam, based on the number of titles released or available as of March 2025, and how does the distribution of these genres compare across major categories such as action, strategy, RPG, and simulation games?
+2) Which games accumulated the highest total hours played by users in March 2025, and what relationships can be observed between hours played, game genre, and player engagement metrics?
+3) Which games attracted the largest number of unique players during March 2025, and how do player counts correlate with other variables such as price, genre, release date, or popularity indicators?
 
 # Data Description
 1) The dataset comes from Kaggle.
@@ -9,7 +11,13 @@
 3) A lot of the data is unnecessary and doesn't contribute when it comes to analyzing the reception a game has from consumers. The volume of data also makes it difficult to work with since Github does not allow direct uploads of greater than 25Mb. I had to upload the data using Git lfs because the size of the file exceeded 400Mb.
 
 # Methods planned to be used
+1) I will begin by cleaning the dataset, isolating key variables relevant to understanding consumer behavior on Steam, such as genre, player satisfaction, playtime, and player counts.
+2) To visualize trends and distributions across the large dataset, I will primarily use bar graphs, which are well-suited for comparing categories such as game genres, game price, and player engagement.
+3) I will analyze relationships between variables by performing comparisons and exploring correlations to identify any significant patterns in consumer interest or gameplay behavior.
 
 # Preliminary Progress
+1) Set up the environment in Colab and connected it to Github, so that I can access the raw data. I got my raw data to load and even grouped some of the data together to see how it looks.
+2) The most challenging part that I have encountered so far was uploading my dataset to Github. Due to the upload limitations, I spent a decent amount of time finding a workaround, which required me to upload the data through a local repository.
 
 # Next Steps
+For the final draft, I want to pick out more variables that can help me analyze consumer behavior and eventually merge them together. I also still need to create plots using the data that captures it in such a way that it is interesting to look at. The code is going to get cleaned up a bit by refactoring the code into functions and using custom libraries. Finally, I will interpret the charts and graphs to conclude how and what consumers spend their time and money on.
