@@ -1,0 +1,15 @@
+# Updated Project Proposal
+
+# Research Questions:
+1) What are the genres of the 
+
+# Data Description
+1) The dataset comes from Kaggle.
+2) The variables that come with the dataset span a wide range of categories. The more expected ones are the names of games, their genres, their average playtime, the costs associated with the game, etc. Information regarding what systems the game can be played on are also included: Windows, Linux, and Mac. Unexpected variables that came up included promotional material like trailers, screenshots, and websites for the game. User reviews, both positive and negative, are included along with the rating for the game itself. There is a lot of additional information surrounding the dataset that isn't necessarily tied to the stats surrounding the game, which helps to get the full picture.
+3) A lot of the data is unnecessary and doesn't contribute when it comes to analyzing the reception a game has from consumers. The volume of data also makes it difficult to work with since Github does not allow direct uploads of greater than 25Mb. I had to upload the data using Git lfs because the size of the file exceeded 400Mb.
+
+# Methods planned to be used
+
+# Preliminary Progress
+
+# Next Steps
