@@ -28,7 +28,7 @@ def meta_genre_check(df):
 def genre_meta_check(df):
     """Sorts by the highest genre count and checks what the metacritic score is"""
     b = (
-    def
+    df
     .groupby("genres")
     .agg(
         genre_count=("genres", "size"),
