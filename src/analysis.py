@@ -2,7 +2,6 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 def summary_stats(df):
-    def summary_stats(df):
     """Summary stats for Steam data with corresponding game names"""
     
     max_playtime_idx = df["average_playtime_forever"].idxmax()
