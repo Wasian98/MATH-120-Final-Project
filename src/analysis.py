@@ -34,7 +34,7 @@ def summary_stats(df):
         ),
         "Highest Estimated Player Count": (
             df.loc[max_owners_idx, "name"],
-            int(df["estimated_owners"].max())
+            df.loc[max_owners_idx, "estimated_owners"]
         ),
         "Biggest Genre": (
             genre_counts.idxmax(),
