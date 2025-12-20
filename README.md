@@ -1,7 +1,8 @@
 # MATH-120-Final-Project: Game Steam Stats for March 2025
 
-#Project Overview
+##Project Overview
 
+```
 python_final_project/
 ├── data_raw/                # Raw, unprocessed data files
 │   ├── games_march2025_full.csv       # Raw steam data
@@ -14,31 +15,69 @@ python_final_project/
 │   └── analysis.py         # Analysis and visualization functions
 ├── MATH_120_Final_Project_Notebook.ipynb          # Main analysis notebook
 └── README.md               # This file
+```
 
-# Summary:
+## Summary:
 This final project for MATH 120 explores statistics on Steam games for March 2025 using data sourced from Kaggle. The analysis focuses on identifying the types of games available on the platform and determining which titles attracted the most consumer attention. By examining patterns in popularity and genre trends, the project highlights what gamers are currently interested in and playing. These insights can help inform aspiring and current game developers about market preferences and emerging opportunities.
 
 Data Link:
 https://www.kaggle.com/datasets/artermiloff/steam-games-dataset?resource=download&select=games_march2025_full.csv
 
-# Instructions on how to run:
+## Instructions on how to run:
 ---------------------------
 Local Repository-
 1) Clone repository
+    ```bash
     git clone https://github.com/Wasian98/MATH-120-Final-Project.git
     cd MATH-120-Final-Project
+    ```
 2) Install required packages if needed
+    ```bash
     pip install pandas matplotlib numpy jupyter
+    ```
 3) Launch jupyter notebook
+    ```bash
     python -m notebook
+    ```
 4) Click on the MATH_120_Final_Project_Notebook and then once it loads, open it in Colab
 
 Through Github-
 1) Go to the Github repository
+    ```
     https://github.com/Wasian98/MATH-120-Final-Project
+    ```
 2) Click on the MATH_120_Final_Project_Notebook
 3) Open the notebook through Colab
 
-# Author
+---------------------------
+
+## Data Description
+- **Games March2025 Full**: Contains information regarding Steam games for March 2025 ranging from names, genres, release dates, average playtimes, etc.
+
+## Analysis Features
+- Data loading and cleaning
+- Summary statistics calculation
+- Sales analysis by category and region
+- Data visualization with matplotlib
+- Modular code organization
+
+## Key Learning Objectives Demonstrated
+- File I/O operations with pandas
+- Data cleaning and preprocessing
+- Data merging and joining
+- Statistical analysis
+- Data visualization
+- Function creation and modular programming
+- Environment compatibility (local vs. cloud)
+
+## Usage
+Run all cells in `MATH_120_Final_Project_Notebook.ipynb` sequentially. The notebook will:
+1. Set up the environment automatically
+2. Load and clean the raw data
+3. Perform statistical analysis
+4. Generate visualizations
+5. Save processed data to the `data/` folder
+
+## Author
 Zacheary Vang
 MATH 120 - Fall/25
