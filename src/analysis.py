@@ -1,47 +1,34 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 
-def calculate_summary_stats(df, column):
-    """Calculate basic summary statistics for a numeric column."""
+def summary_stats(df):
+    """Summary stats for Steam data"""
     return {
-        'mean': df[column].mean(),
-        'median': df[column].median(),
-        'std': df[column].std(),
-        'min': df[column].min(),
-        'max': df[column].max()
+        'Highest Playtime': df["average_playtime_forever"].max(),
+        'Biggest Genre': df["genres"].count(),
+        'Highest Metacritic Score': df["metacritic_score"].max(),
+        'Highest Amount of Reviews': df["num_reviews_total"].max(),
+        'Highest Estimated Player Count': df["estimated_owners"].max()
     }
 
-def meta_genre_check(df):
-    """Sorts by the highest metacritic score and checks the genre count for those scores"""
+def highest_played_games(df):
+    """Sorts by the highest average playtime for an individual game and retains other relevant information"""
     a = (
-    df
-    .groupby("genres")
+    steam_clean
+    .groupby("name", as_index=False)
     .agg(
-        genre_count=("genres", "size"),
-        meta_score=("metacritic_score", "mean"),
+        genres=("genres", lambda x: ", ".join(sorted(set(x)))),
+        playtime=("average_playtime_forever", "mean"),
+        metacritic_score=("metacritic_score", "mean"),
+        player_reviews=("num_reviews_total", "mean")
     )
-    .query("genre_count > 10 and meta_score > 0")
-    .sort_values(by="meta_score", ascending=False)
+    .sort_values(by="playtime", ascending=False)
     )
     return a
 
-def genre_meta_check(df):
-    """Sorts by the highest genre count and checks what the metacritic score is"""
+def stats_by_genre(df):
+    """Counts the number of entries per genre while checking the average metacritic score and average playtime"""
     b = (
-    df
-    .groupby("genres")
-    .agg(
-        genre_count=("genres", "size"),
-        meta_score=("metacritic_score", "mean"),
-    )
-    .query("genre_count > 10 and meta_score > 0")
-    .sort_values(by="genre_count", ascending=False)
-    )
-    return b
-
-def unsorted_check(df):
-    """Sorts by the highest genre count and checks what the metacritic score is"""
-    c = (
     df
     .groupby("genres")
     .agg(
@@ -51,4 +38,4 @@ def unsorted_check(df):
     )
     .query("genre_count > 10 and meta_score > 0")
     )
-    return c
+    return b
