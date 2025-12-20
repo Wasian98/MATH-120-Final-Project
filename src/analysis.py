@@ -2,19 +2,51 @@ import pandas as pd
 import matplotlib.pyplot as plt
 
 def summary_stats(df):
-    """Summary stats for Steam data"""
+    def summary_stats(df):
+    """Summary stats for Steam data with corresponding game names"""
+    
+    max_playtime_idx = df["average_playtime_forever"].idxmax()
+    max_meta_idx = df["metacritic_score"].idxmax()
+    max_reviews_idx = df["num_reviews_total"].idxmax()
+    max_owners_idx = df["estimated_owners"].idxmax()
+
+    # flatten multi-genre rows safely
+    genre_counts = (
+        df["genres"]
+        .dropna()
+        .str.split(";")
+        .explode()
+        .str.strip()
+        .value_counts()
+    )
+    
     return {
-        'Highest Playtime': df["average_playtime_forever"].max(),
-        'Biggest Genre': df["genres"].count(),
-        'Highest Metacritic Score': df["metacritic_score"].max(),
-        'Highest Amount of Reviews': df["num_reviews_total"].max(),
-        'Highest Estimated Player Count': df["estimated_owners"].max()
+        "Highest Playtime": (
+            df.loc[max_playtime_idx, "name"],
+            df.loc[max_playtime_idx, "average_playtime_forever"]
+        ),
+        "Highest Metacritic Score": (
+            df.loc[max_meta_idx, "name"],
+            df.loc[max_meta_idx, "metacritic_score"]
+        ),
+        "Highest Amount of Reviews": (
+            df.loc[max_reviews_idx, "name"],
+            df.loc[max_reviews_idx, "num_reviews_total"]
+        ),
+        "Highest Estimated Player Count": (
+            df.loc[max_owners_idx, "name"],
+            df.loc[max_owners_idx, "estimated_owners"]
+        ),
+        "Biggest Genre": (
+            genre_counts.idxmax(),
+            genre_counts.max()
+        )
     }
 
 def highest_played_games(df):
     """Sorts by the highest average playtime for an individual game and retains other relevant information"""
     a = (
-    steam_clean
+    df
     .groupby("name", as_index=False)
     .agg(
         genres=("genres", lambda x: ", ".join(sorted(set(x)))),
