@@ -22,19 +22,19 @@ def summary_stats(df):
     return {
         "Highest Playtime": (
             df.loc[max_playtime_idx, "name"],
-            df.loc[max_playtime_idx, "average_playtime_forever"]
+            int(df["average_playtime_forever"].max())
         ),
         "Highest Metacritic Score": (
             df.loc[max_meta_idx, "name"],
-            df.loc[max_meta_idx, "metacritic_score"]
+            int(df["metacritic_score"].max())
         ),
         "Highest Amount of Reviews": (
             df.loc[max_reviews_idx, "name"],
-            df.loc[max_reviews_idx, "num_reviews_total"]
+            int(df["num_reviews_total"].max())
         ),
         "Highest Estimated Player Count": (
             df.loc[max_owners_idx, "name"],
-            df.loc[max_owners_idx, "estimated_owners"]
+            int(df["estimated_owners"].max())
         ),
         "Biggest Genre": (
             genre_counts.idxmax(),
