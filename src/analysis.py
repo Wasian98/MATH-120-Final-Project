@@ -38,3 +38,17 @@ def genre_meta_check(df):
     .sort_values(by="genre_count", ascending=False)
     )
     return b
+
+def unsorted_check(df):
+    """Sorts by the highest genre count and checks what the metacritic score is"""
+    c = (
+    df
+    .groupby("genres")
+    .agg(
+        genre_count=("genres", "size"),
+        meta_score=("metacritic_score", "mean"),
+        average_playtime=("average_playtime_forever", "mean")
+    )
+    .query("genre_count > 10 and meta_score > 0")
+    )
+    return c
