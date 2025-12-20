@@ -7,8 +7,10 @@ def load_raw_data(file_path):
 
 def clean_data(df):
     """Cleans up and keeps specific columns"""
-    cols_to_keep = ["name", "release_date", "price", "metacritic_score", "genres", "user_score", "estimated_owners", "average_playtime_forever", "average_playtime_2weeks", "num_reviews_total"]
+    cols_to_keep = ["name", "release_date", "price", "metacritic_score", "genres", "estimated_owners", "average_playtime_forever", "average_playtime_2weeks", "num_reviews_total"]
     df = df[cols_to_keep]
+    # Remove titles with metacritic scores of 0
+    df = df[df["metacritic_score"] != 0]
     return df
 
 def save_cleaned_data(df, output_path):
